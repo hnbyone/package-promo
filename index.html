@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/e-design-system-fae52886-f164-49d7-ad3e-748a5d03bc11/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/e-design-system-fae52886-f164-49d7-ad3e-748a5d03bc11/tokens/colors.css">
+<link rel="stylesheet" href="_ds/e-design-system-fae52886-f164-49d7-ad3e-748a5d03bc11/tokens/typography.css">
+<link rel="stylesheet" href="_ds/e-design-system-fae52886-f164-49d7-ad3e-748a5d03bc11/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/e-design-system-fae52886-f164-49d7-ad3e-748a5d03bc11/tokens/base.css">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  @keyframes dkFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @keyframes dkFloatPlane{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(-4deg)}}
+  @keyframes dkTwinkle{0%,100%{opacity:.35;transform:scale(.82)}50%{opacity:1;transform:scale(1.05)}}
+  @keyframes dkBob{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-7px) rotate(var(--rot,0deg))}}
+  @keyframes dkSeq{0%{transform:scale(1);box-shadow:0 6px 14px -8px rgba(20,60,56,.18)}9%{transform:scale(1.045);box-shadow:0 18px 32px -10px rgba(22,191,177,.5),0 0 0 3px rgba(22,191,177,.6)}17%{transform:scale(1.045);box-shadow:0 18px 32px -10px rgba(22,191,177,.5),0 0 0 3px rgba(22,191,177,.6)}25%{transform:scale(1);box-shadow:0 6px 14px -8px rgba(20,60,56,.18)}100%{transform:scale(1);box-shadow:0 6px 14px -8px rgba(20,60,56,.18)}}
+  @keyframes dkSeqCta{0%{transform:scale(1);box-shadow:0 18px 36px -12px rgba(0,90,84,.5)}9%{transform:scale(1.045);box-shadow:0 22px 40px -10px rgba(0,90,84,.6),0 0 0 4px rgba(22,191,177,.45)}17%{transform:scale(1.045);box-shadow:0 22px 40px -10px rgba(0,90,84,.6),0 0 0 4px rgba(22,191,177,.45)}25%{transform:scale(1);box-shadow:0 18px 36px -12px rgba(0,90,84,.5)}100%{transform:scale(1);box-shadow:0 18px 36px -12px rgba(0,90,84,.5)}}
+</style>
+</helmet>
+
+<div style="--ca:{{ t.accent }};--cad:{{ t.deep }};--cas:{{ t.soft }};--casb:{{ t.softBorder }};--cagrad:{{ t.accentGrad }};--chero:{{ t.heroBg }};--cpage:{{ t.pageBg }};--crad:{{ t.rad }};--cbtn:{{ t.btn }};--cchs:{{ t.chs }};--ctmain:{{ t.ctmain }};--ctaccent:{{ t.ctaccent }};--ctstroke:{{ t.ctstroke }};--ctshadow:{{ t.ctshadow }};--cband:{{ t.band }};--cbandt:{{ t.bandTitle }};--cbandtsh:{{ t.bandTsh }};--cbandsub:{{ t.bandSub }};--clabel:{{ t.label }};--clabelsub:{{ t.labelSub }};--cring:{{ t.ring }};--cgiftw:{{ t.giftW }};--cloudmt:{{ t.cloudMT }};--lidanim:{{ t.lidAnim }};--ccta:{{ t.ctaBg }};--cprice:{{ t.priceColor }};--cqbg:{{ t.qCardBg }};--cqbd:{{ t.qCardBorder }};--cbicon:{{ t.bIcon }};--cbiconbg:{{ t.bIconBg }};min-height:100vh;padding:34px 16px;background:var(--cpage,#DBF5F2);font-family:var(--font-sans),'Pretendard',sans-serif;color:#25282B;">
+  <div style="max-width:1000px;margin:0 auto;background:#fff;border-radius:36px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(20,60,56,0.42);">
+
+    <!-- ===================== HERO ===================== -->
+    <div data-screen-label="히어로" style="position:relative;overflow:hidden;background:var(--chero,linear-gradient(180deg,#56DBCC,#34C6B7));padding:0 0 0;">
+
+      <!-- sparkles -->
+      <sc-if value="{{ sparkles }}" hint-placeholder-val="{{ true }}">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" style="position:absolute;top:78px;left:120px;opacity:.9;animation:dkTwinkle 3.2s ease-in-out infinite;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFE066" style="position:absolute;top:168px;left:70px;animation:dkTwinkle 2.6s ease-in-out infinite .6s;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" style="position:absolute;top:64px;right:150px;animation:dkTwinkle 2.9s ease-in-out infinite 1.1s;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff" style="position:absolute;top:140px;right:96px;opacity:.85;animation:dkTwinkle 2.4s ease-in-out infinite .3s;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        <span style="position:absolute;top:56px;left:300px;width:8px;height:8px;border-radius:50%;background:#fff;opacity:.7;"></span>
+        <span style="position:absolute;top:118px;right:250px;width:7px;height:7px;border-radius:50%;background:#FFE066;"></span>
+      </sc-if>
+
+      <!-- hot-air balloon -->
+      <sc-if value="{{ showBalloon }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;top:58px;left:42px;animation:dkFloat 5s ease-in-out infinite;">
+          <div style="width:54px;height:62px;border-radius:50% 50% 48% 48%/58% 58% 42% 42%;background:linear-gradient(135deg,#FF8A65,#FF6F61);box-shadow:0 12px 20px -8px rgba(180,60,40,0.45),inset 0 3px 0 rgba(255,255,255,0.4),inset 0 -8px 14px rgba(150,40,30,0.3);position:relative;">
+            <span style="position:absolute;left:50%;top:6px;transform:translateX(-50%);width:9px;height:56px;background:rgba(255,255,255,0.35);"></span>
+          </div>
+          <div style="width:2px;height:11px;background:rgba(255,255,255,0.6);margin:0 auto;"></div>
+          <div style="width:18px;height:13px;border-radius:4px;background:#9A6A4A;margin:0 auto;box-shadow:inset 0 2px 0 rgba(255,255,255,0.25);"></div>
+        </div>
+      </sc-if>
+
+      <!-- airplane -->
+      <sc-if value="{{ showPlane }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;top:90px;right:48px;animation:dkFloatPlane 4.6s ease-in-out infinite;">
+          <svg width="86" height="52" viewBox="0 0 92 56" fill="none">
+            <path d="M6 33 L60 24 L78 8 C82 4 88 6 86 12 L74 30 L84 40 C86 42 84 46 81 45 L62 38 L40 50 L34 47 L42 35 L20 37 L14 44 L9 42 L12 33 L6 33Z" fill="#ffffff" stroke="#CFEFEA" stroke-width="1.5" stroke-linejoin="round"></path>
+            <circle cx="40" cy="29" r="2.4" fill="#CFEFEA"></circle>
+          </svg>
+        </div>
+        <span style="position:absolute;top:122px;right:144px;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.7;"></span>
+        <span style="position:absolute;top:132px;right:170px;width:5px;height:5px;border-radius:50%;background:#fff;opacity:.5;"></span>
+      </sc-if>
+
+      <!-- gift confetti -->
+      <sc-if value="{{ showConfetti }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;top:58px;left:212px;width:14px;height:7px;border-radius:4px;background:#FFE066;transform:rotate(28deg);"></div>
+        <div style="position:absolute;top:206px;left:150px;width:12px;height:6px;border-radius:4px;background:#FF8A65;transform:rotate(-20deg);"></div>
+        <div style="position:absolute;top:96px;right:212px;width:13px;height:7px;border-radius:4px;background:#80E7A9;transform:rotate(16deg);"></div>
+        <div style="position:absolute;top:232px;right:150px;width:12px;height:6px;border-radius:4px;background:#fff;opacity:.85;transform:rotate(-24deg);"></div>
+      </sc-if>
+
+      <!-- top bar -->
+      <div style="position:relative;display:flex;justify-content:center;padding:22px 24px 0;">
+        
+      </div>
+
+      <!-- gift composition: lid → text → box -->
+      <div style="position:relative;text-align:center;padding:6px 24px 2px;">
+
+        <!-- gift lid -->
+        <img src="assets/giftlid.png" alt="선물상자 뚜껑" style="position:relative;z-index:2;width:min(82%,var(--cgiftw,330px));height:auto;display:block;margin:0 auto;filter:drop-shadow(0 18px 20px rgba(0,90,84,0.26));animation:var(--lidanim,dkFloat 5.5s ease-in-out infinite);">
+
+        <!-- text in the gap -->
+        <div style="position:relative;z-index:3;margin:8px auto 10px;">
+          <sc-if value="{{ heroEyebrow }}" hint-placeholder-val="{{ true }}"><div style="font-size:17px;font-weight:800;color:#fff;letter-spacing:-0.01em;text-shadow:0 2px 4px rgba(0,70,64,0.25);">내 마음대로, 필요한 것만 쏙!</div></sc-if>
+          <h1 style="margin:8px 0 0;font-size:min(var(--cchs,48px),7vw);font-weight:800;line-height:1.06;letter-spacing:-0.02em;white-space:nowrap;">
+            <span style="color:var(--ctmain,#fff);-webkit-text-stroke:var(--ctstroke,0);paint-order:stroke;text-shadow:var(--ctshadow,0 3px 10px rgba(0,70,64,0.22));">골라담는 </span><img src="assets/sec1-logo.png" alt="단꿈e" style="height:0.84em;width:auto;display:inline-block;vertical-align:-0.08em;margin:0 0.04em;"><span style="color:var(--ctmain,#fff);-webkit-text-stroke:var(--ctstroke,0);paint-order:stroke;text-shadow:var(--ctshadow,0 3px 10px rgba(0,70,64,0.22));"> 패키지</span>
+          </h1>
+
+          <!-- pill sub-headline -->
+          <div style="margin:18px auto 0;display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:9px;max-width:92%;background:rgba(255,255,255,0.22);border:2px solid rgba(255,255,255,0.7);border-radius:999px;padding:12px 24px;font-size:15.5px;font-weight:800;color:#fff;backdrop-filter:blur(4px);box-shadow:0 8px 18px -8px rgba(0,70,64,0.35);">
+            정해진 패키지는 그만! 내가 선택한 상품<span style="color: rgb(255, 224, 102);">그대로 15% 할인</span>
+          </div>
+          <div style="margin-top:13px;font-size:14px;font-weight:800;color:#fff;letter-spacing:0.04em;text-shadow:0 2px 4px rgba(0,70,64,0.3);">EVENT · 2026. 07. 01 — 07. 31</div>
+        </div>
+
+        <!-- gift box body -->
+        <div style="position:relative;">
+          <img src="assets/giftbox.png" alt="선물상자" style="position:relative;z-index:1;width:min(82%,var(--cgiftw,330px));height:auto;display:block;margin:0 auto;filter:drop-shadow(0 22px 24px rgba(0,90,84,0.3));">
+          <sc-if value="{{ showCoin }}" hint-placeholder-val="{{ true }}">
+            <div style="--rot:-12deg;position:absolute;left:calc(50% - var(--cgiftw,330px) * 0.5 - 14px);bottom:2px;width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,#FFD84D,#FFC400);color:#7a5400;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);z-index:4;box-shadow:0 16px 24px -8px rgba(150,110,0,0.5),inset 0 4px 2px rgba(255,255,255,0.6),inset 0 -8px 14px rgba(150,110,0,0.4);animation:dkBob 3.8s ease-in-out infinite;">
+              <span style="font-size:23px;font-weight:800;line-height:1;">15%</span>
+              <span style="font-size:11px;font-weight:800;margin-top:2px;">할인</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{ sparkles }}" hint-placeholder-val="{{ true }}">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="position:absolute;right:calc(50% - var(--cgiftw,330px) * 0.5 - 6px);top:4px;z-index:4;animation:dkTwinkle 2.7s ease-in-out infinite .5s;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+          </sc-if>
+        </div>
+      </div>
+
+      <!-- divider: cloud cutout image -->
+      <img src="assets/hero-cloud2.png" alt="" style="position: relative; z-index: 3; display: block; width: 100%; margin-top: var(--cloudmt,-70px); margin-bottom: -4px; pointer-events: none; object-fit: scale-down">
+    </div>
+
+    <!-- ===================== 고객 안내 ===================== -->
+    <div style="background: #fff; padding: clamp(38px,7vw,48px) clamp(20px,5vw,40px) clamp(42px,8vw,54px); text-align: center; width: 100%; height: 100%">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:6px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--ca,#16BFB1)"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        <div style="font-size:13px;font-weight:800;letter-spacing:0.08em;color:var(--ca,#16BFB1);">CHECK POINT</div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--ca,#16BFB1)"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+      </div>
+      <h2 style="margin:0 0 30px;font-size:31px;font-weight:800;letter-spacing:-0.02em;color:var(--cad,#00827C);">혹시 이런 적, 있으셨나요?</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:660px;margin:0 auto;">
+        <sc-for list="{{ questions }}" as="q" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:18px;background:var(--cqbg,var(--cas,#EAFAF8));border:2px solid var(--cqbd,var(--casb,#CFF1ED));border-radius:var(--crad,22px);padding:22px 26px;text-align:left;transform-origin:center;animation:{{ q.anim }};">
+            <span style="width:44px;height:44px;flex:none;border-radius:50%;background:var(--cagrad,linear-gradient(160deg,#22CDBE,#10A99C));color:#fff;font-size:21px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 14px -4px rgba(0,90,84,0.5),inset 0 2px 0 rgba(255,255,255,0.5),inset 0 -5px 10px rgba(0,70,64,0.3);">!</span>
+            <span style="font-size:17px;font-weight:700;color:#3a4140;">{{ q.text }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="margin-top:30px;display:inline-block;transform-origin:center;animation:{{ conclusionAnim }};background:var(--cagrad,linear-gradient(135deg,#16BFB1,#00827C));color:#fff;border-radius:var(--crad,22px);padding:20px 34px;font-size:19px;font-weight:800;letter-spacing:-0.01em;box-shadow:0 18px 36px -12px rgba(0,90,84,0.5);">그렇다면 이제는 필요한 강좌와 교재를 직접 선택해 보세요!</div>
+    </div>
+
+    <!-- ===================== 혜택 (band) ===================== -->
+    <div style="background:var(--cband,linear-gradient(180deg,#FFDC3A,#FFD21F));padding:clamp(40px,7vw,54px) clamp(20px,5vw,40px) clamp(44px,8vw,58px);text-align:center;position:relative;overflow:hidden;">
+      <sc-if value="{{ sparkles }}" hint-placeholder-val="{{ true }}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" style="position:absolute;top:38px;left:80px;opacity:.85;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" style="position:absolute;top:66px;right:110px;opacity:.8;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+      </sc-if>
+      <h2 style="margin: 0 0 8px; font-size: 33px; font-weight: 800; letter-spacing: -0.02em; color: var(--purple-500); text-shadow: 0px 0px 0px rgba(210,150,0,0.55)">골라담는 패키지, 이런 점이 좋아요</h2>
+      <p style="margin:0 0 40px;font-size:15px;font-weight:700;color:var(--cbandsub,#8a6d00);">필요한 구성만 담고, 합리적인 가격으로 시작하세요</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:clamp(20px,4vw,30px);max-width:760px;margin:0 auto;">
+
+        <div>
+          <div style="width:120px;height:120px;margin:0 auto;border-radius:50%;background:var(--cbiconbg,#fff);border:var(--cbicon,7px solid #F5B500);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 26px -10px rgba(60,50,20,0.32);">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--ca,#16BFB1)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><path d="M3.27 6.96 12 12.01l8.73-5.05"></path><path d="M12 22.08V12"></path></svg>
+          </div>
+          <div style="margin-top:18px;font-size:18px;font-weight:800;color:var(--clabel,#2a2400);">강좌 1개 + 교재 자유 구성</div>
+          <div style="margin-top:7px;font-size:13.5px;line-height:1.55;color:var(--clabelsub,#7a6510);">종합 프리패스 1개에<br>필요한 교재만 골라 담아요</div>
+        </div>
+
+        <div>
+          <div style="width:120px;height:120px;margin:0 auto;border-radius:50%;background:var(--cbiconbg,#fff);border:var(--cbicon,7px solid #F5B500);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 26px -10px rgba(60,50,20,0.32);">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="var(--ca,#16BFB1)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+          </div>
+          <div style="margin-top:18px;font-size:18px;font-weight:800;color:var(--clabel,#2a2400);">담은 금액 15% 자동 할인</div>
+          <div style="margin-top:7px;font-size:13.5px;line-height:1.55;color:var(--clabelsub,#7a6510);">구성한 패키지 총액에서<br>즉시 15%를 할인해요</div>
+        </div>
+
+        <div>
+          <div style="width:120px;height:120px;margin:0 auto;border-radius:50%;background:var(--cbiconbg,#fff);border:var(--cbicon,7px solid #F5B500);display:flex;align-items:center;justify-content:center;box-shadow:0 16px 26px -10px rgba(60,50,20,0.32);">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="var(--ca,#16BFB1)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.26 6.1.5-4.6 4.07 1.38 6.17L12 16.9l-5.78 2.37L7.6 13.1 3 9.03l6.1-.5z"></path></svg>
+          </div>
+          <div style="margin-top:18px;font-size:18px;font-weight:800;color:var(--clabel,#2a2400);">스타 선생님 전 강좌 무제한</div>
+          <div style="margin-top:7px;font-size:13.5px;line-height:1.55;color:var(--clabelsub,#7a6510);">검증된 라인업으로<br>자기주도 학습 습관까지</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 골라담기 (STEP) ===================== -->
+    <div style="background:linear-gradient(180deg,var(--cas,#EAFAF8),#fff);padding:clamp(40px,7vw,52px) clamp(18px,5vw,44px) clamp(36px,7vw,48px);">
+      <div style="text-align:center;margin-bottom:34px;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--ca,#16BFB1)"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+          <span style="display:inline-block;background:#FFE066;color:#8a6d00;border-radius:999px;padding:7px 18px;font-size:13px;font-weight:800;box-shadow:0 8px 14px -6px rgba(160,130,0,0.4);">예시 미리보기</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--ca,#16BFB1)"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        </div>
+        <h2 style="margin:14px 0 6px;font-size:31px;font-weight:800;letter-spacing:-0.02em;color:var(--cad,#00827C);">3단계로 완성하는 내 패키지</h2>
+        <p style="margin:0;font-size:15px;color:#5c6663;font-weight:600;">강좌 1개와 원하는 교재를 골라 구성을 미리 만들어 보세요</p>
+      </div>
+
+      <!-- STEP 1 -->
+      <div style="display:flex;gap:22px;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex:none;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--cagrad,linear-gradient(160deg,#22CDBE,#10A99C));color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 16px -4px rgba(0,90,84,0.5),inset 0 2px 0 rgba(255,255,255,0.5),inset 0 -6px 10px rgba(0,70,64,0.3);">1</div>
+          <div style="flex:1;width:3px;border-radius:3px;background:var(--casb,#CFF1ED);margin-top:10px;"></div>
+        </div>
+        <div style="flex:1;padding-bottom:34px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+            <span style="font-size:19px;font-weight:800;">강좌 선택</span>
+            <span style="padding:4px 11px;border-radius:999px;background:var(--ca,#16BFB1);color:#fff;font-size:11px;font-weight:800;">필수 1개</span>
+          </div>
+          <p style="margin:0 0 16px;font-size:14px;color:#6a716f;">신규 수강권과 재연장 중에서 원하는 종합 프리패스를 담아주세요.</p>
+          <div style="display:inline-flex;background:#fff;border-radius:999px;padding:6px;gap:6px;margin-bottom:18px;box-shadow:0 8px 16px -6px rgba(20,60,56,0.18);">
+            <sc-for list="{{ f.tabs }}" as="tb" hint-placeholder-count="2">
+              <button onClick="{{ tb.onSelect }}" style="border:none;cursor:pointer;padding:10px 22px;border-radius:999px;font-size:13px;font-weight:800;font-family:inherit;background:{{ tb.bg }};color:{{ tb.fg }};box-shadow:{{ tb.sh }};transition:all .15s ease;">{{ tb.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;">
+            <sc-for list="{{ f.courseOptions }}" as="opt" hint-placeholder-count="2">
+              <button onClick="{{ opt.onSelect }}" style="position:relative;text-align:left;padding:22px;border-radius:var(--crad,22px);border:none;background:{{ opt.selBg }};cursor:pointer;font-family:inherit;transition:all .15s ease;box-shadow:{{ opt.sh }};">
+                <span style="position:absolute;top:20px;right:20px;width:24px;height:24px;border-radius:50%;background:#fff;border:{{ opt.dotBorder }};box-sizing:border-box;"></span>
+                <span style="display:block;font-size:13px;font-weight:700;color:#75787B;">종합 프리패스</span>
+                <span style="display:block;font-size:18px;font-weight:800;margin-top:3px;">{{ opt.spec }}</span>
+                <span style="display:block;font-size:12px;color:#9DA0A3;margin-top:8px;">{{ opt.detail }}</span>
+                <span style="display:block;font-size:22px;font-weight:800;color:var(--cad,#00827C);margin-top:8px;">{{ opt.priceText }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div style="display:flex;gap:22px;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex:none;">
+          <div style="width:48px;height:48px;border-radius:50%;background:var(--cagrad,linear-gradient(160deg,#22CDBE,#10A99C));color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 16px -4px rgba(0,90,84,0.5),inset 0 2px 0 rgba(255,255,255,0.5),inset 0 -6px 10px rgba(0,70,64,0.3);">2</div>
+          <div style="flex:1;width:3px;border-radius:3px;background:var(--casb,#CFF1ED);margin-top:10px;"></div>
+        </div>
+        <div style="flex:1;padding-bottom:34px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+            <span style="font-size:19px;font-weight:800;">교재 선택</span>
+            <span style="padding:4px 11px;border-radius:999px;background:var(--cas,#EAFAF8);color:var(--cad,#00827C);font-size:11px;font-weight:800;border:1.5px solid var(--casb,#CFF1ED);">자유 선택 · 권당 10,000원</span>
+          </div>
+          <p style="margin:0 0 16px;font-size:14px;color:#6a716f;">필요한 과목 교재만 골라 담으세요. 과목당 1권씩 제공됩니다.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:13px;">
+            <sc-for list="{{ f.books }}" as="bk" hint-placeholder-count="5">
+              <button onClick="{{ bk.onToggle }}" style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:999px;border:none;background:{{ bk.selBg }};cursor:pointer;font-family:inherit;transition:all .15s ease;box-shadow:{{ bk.sh }};">
+                <span style="width:20px;height:20px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:{{ bk.chkBg }};box-shadow:{{ bk.chkSh }};flex:none;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:{{ bk.chkOpacity }};"><path d="M5 13l4 4L19 7"></path></svg>
+                </span>
+                <span style="font-size:15px;font-weight:800;color:{{ bk.tagFg }};">{{ bk.name }}</span>
+                <span style="font-size:12px;font-weight:700;color:#9DA0A3;">{{ bk.priceText }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 : spring paper summary -->
+      <div style="display:flex;gap:22px;">
+        <div style="display:flex;flex-direction:column;align-items:center;flex:none;">
+          <div style="width:48px;height:48px;border-radius:50%;background:#25282B;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 16px -4px rgba(0,0,0,0.4),inset 0 2px 0 rgba(255,255,255,0.25);">3</div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:19px;font-weight:800;margin-bottom:18px;">구성 예시 확인</div>
+
+          <div style="position:relative;">
+            <sc-if value="{{ springCards }}" hint-placeholder-val="{{ true }}">
+              <div style="position:absolute;top:-11px;left:0;right:0;display:flex;justify-content:center;gap:30px;z-index:2;">
+                <sc-for list="{{ rings }}" as="r" hint-placeholder-count="9">
+                  <span style="width:11px;height:25px;border-radius:6px;background:linear-gradient(180deg,#eef2f1,#9fb0ad);box-shadow:0 3px 4px rgba(0,0,0,0.22),inset 0 1px 0 rgba(255,255,255,0.9);"></span>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <div style="background:#fff;border:2px solid #E6EFEE;border-radius:var(--crad,22px);padding:32px 30px 26px;box-shadow:0 18px 36px -14px rgba(20,60,56,0.3);margin-top:6px;">
+              <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+                <div style="flex:1;min-width:0;display:flex;flex-wrap:wrap;gap:clamp(16px,4vw,30px);">
+                  <div>
+                    <div style="font-size:12px;color:#9DA0A3;margin-bottom:5px;">담은 금액</div>
+                    <div style="font-size:16px;font-weight:700;color:#9DA0A3;text-decoration:line-through;">{{ f.pickedText }}</div>
+                  </div>
+                  <div>
+                    <div style="font-size:12px;color:var(--cad,#00827C);margin-bottom:5px;font-weight:800;">15% 할인</div>
+                    <div style="font-size:16px;font-weight:800;color:var(--cad,#00827C);">{{ f.discountText }}</div>
+                  </div>
+                  <div>
+                    <div style="font-size:12px;color:#9DA0A3;margin-bottom:5px;">예상 결제 금액</div>
+                    <div style="font-size:30px;font-weight:800;color:var(--cprice,#16BFB1);letter-spacing:-0.02em;line-height:1;">{{ f.finalText }}</div>
+                  </div>
+                </div>
+                
+              </div>
+              <div style="margin-top:18px;display:flex;align-items:center;gap:8px;padding-top:16px;border-top:2px dashed var(--casb,#D6F0EC);">
+                <span style="width:20px;height:20px;flex:none;border-radius:50%;background:var(--cad,#00827C);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;">i</span>
+                <span style="font-size:13px;color:#5c6663;font-weight:600;">실제 결제는 진행되지 않으며, 구성을 보여드리는 예시 화면입니다.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== CTA ===================== -->
+    <div style="background:var(--ccta,linear-gradient(135deg,#22CDBE 0%,#00827C 100%));padding:clamp(40px,7vw,54px) clamp(22px,5vw,40px);text-align:center;color:#fff;position:relative;overflow:hidden;">
+      <sc-if value="{{ sparkles }}" hint-placeholder-val="{{ true }}">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" style="position:absolute;top:36px;left:90px;opacity:.8;animation:dkTwinkle 3s ease-in-out infinite;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFE066" style="position:absolute;bottom:40px;right:110px;animation:dkTwinkle 2.6s ease-in-out infinite .5s;"><path d="M12 0C13 7 17 11 24 12C17 13 13 17 12 24C11 17 7 13 0 12C7 11 11 7 12 0Z"></path></svg>
+        <div style="position:absolute;top:-30px;right:-20px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,0.1);"></div>
+      </sc-if>
+      <h2 style="position:relative;margin:0 0 10px;font-size:29px;font-weight:800;letter-spacing:-0.02em;">지금, 나만의 패키지를 선택해 보세요</h2>
+      <p style="position:relative;margin:0 0 26px;font-size:15px;color:rgba(255,255,255,0.92);">필요한 강좌와 교재를 선택하면 특별한 할인까지 바로!</p>
+      <button type="button" style="position:relative;min-height:58px;padding:0 38px;display:inline-flex;align-items:center;justify-content:center;border:none;border-radius:var(--cbtn,999px);background:#fff;color:var(--cad,#00827C);font-family:inherit;font-size:18px;font-weight:800;cursor:pointer;box-shadow:0 16px 28px -8px rgba(0,40,36,0.45),inset 0 2px 0 rgba(255,255,255,0.9);">패키지담으러가기</button>
+      <div style="position:relative;margin-top:14px;font-size:13px;color:rgba(255,255,255,0.85);"><br></div>
+    </div>
+
+    <!-- ===================== 유의사항 ===================== -->
+    <div style="background:#fff;padding:clamp(30px,6vw,38px) clamp(20px,5vw,40px) clamp(34px,6vw,42px);">
+      <div style="background: #fff; border-radius: var(--crad,22px); padding: 28px 30px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          
+          <span style="font-size:16px;font-weight:800;">이벤트 유의사항</span>
+        </div>
+        <ul style="margin:0;padding-left:18px;color:#6a716f;font-size:13.5px;line-height:2;">
+          <li>본 페이지의 패키지 구성 화면은 <b style="color:#4a5552;">예시이며 실제 결제가 진행되지 않습니다.</b></li>
+          <li>본 프로모션은 종합 프리패스 강좌 1개 이상 구성 시 적용됩니다.</li>
+          <li>강좌 금액은 월 90,000원 × 수강 개월 수로 산정됩니다.</li>
+          <li>교재는 과목당 1권, 권당 10,000원으로 제공됩니다.</li>
+          <li>최종 결제 금액은 강좌·교재 합산 금액에서 15% 할인된 금액입니다.</li>
+          <li>재연장 상품은 기존 수강 회원에 한해 신청 가능합니다.</li>
+          <li>이벤트 기간 및 구성은 사정에 따라 변경될 수 있습니다.</li>
+        </ul>
+      </div>
+      <div style="margin-top:20px;display:flex;align-items:center;gap:10px;">
+        <img src="assets/sec1-logo.png" alt="단꿈e" style="height:20px;display:block;">
+        <span style="font-size:12px;color:#9DA0A3;">초등공부 신의 한 수 · © 2026 단꿈e</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#39C9BA"></rect><g transform="translate(30,30)"><rect x="0" y="16" width="40" height="24" rx="7" fill="#ffffff"></rect><rect x="0" y="9" width="40" height="12" rx="6" fill="#FFD21F"></rect><rect x="16" y="9" width="8" height="31" rx="3" fill="#00827C"></rect></g></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1040,&quot;height&quot;:2400},&quot;accentTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mint&quot;,&quot;teal&quot;,&quot;sky&quot;,&quot;grape&quot;,&quot;coral&quot;,&quot;lime&quot;],&quot;default&quot;:&quot;mint&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;heroStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;gradient&quot;,&quot;radial&quot;,&quot;solid&quot;],&quot;default&quot;:&quot;gradient&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;titleColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;white&quot;,&quot;yellow&quot;,&quot;ivory&quot;],&quot;default&quot;:&quot;white&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;titleOutline&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;headlineSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:62,&quot;min&quot;:36,&quot;max&quot;:64,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;giftScale&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:0.82,&quot;min&quot;:0.6,&quot;max&quot;:1.15,&quot;step&quot;:0.03,&quot;tsType&quot;:&quot;number&quot;},&quot;giftFloat&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;cloudOverlap&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:255,&quot;min&quot;:0,&quot;max&quot;:260,&quot;step&quot;:5,&quot;tsType&quot;:&quot;number&quot;},&quot;benefitBand&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;yellow&quot;,&quot;mint&quot;,&quot;cream&quot;,&quot;white&quot;],&quot;default&quot;:&quot;yellow&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;benefitIcon&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ring&quot;,&quot;soft&quot;],&quot;default&quot;:&quot;ring&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ringColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;gold&quot;,&quot;mint&quot;,&quot;coral&quot;,&quot;white&quot;],&quot;default&quot;:&quot;gold&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;questionCard&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tint&quot;,&quot;white&quot;,&quot;outline&quot;],&quot;default&quot;:&quot;tint&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;pulseSequence&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;ctaStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;gradient&quot;,&quot;solid&quot;,&quot;dark&quot;],&quot;default&quot;:&quot;gradient&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;finalPriceColor&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;accent&quot;,&quot;deep&quot;,&quot;coral&quot;],&quot;default&quot;:&quot;accent&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;cornerRadius&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:22,&quot;min&quot;:12,&quot;max&quot;:32,&quot;step&quot;:2,&quot;tsType&quot;:&quot;number&quot;},&quot;buttonShape&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;pill&quot;,&quot;rounded&quot;,&quot;blocky&quot;],&quot;default&quot;:&quot;pill&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;pageBg&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tint&quot;,&quot;cream&quot;,&quot;white&quot;],&quot;default&quot;:&quot;tint&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;heroEyebrow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;sparkles&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showConfetti&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showBalloon&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showPlane&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showCoin&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;springCards&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'new', course: 'p12', books: ['math', 'history', 'reading'] };
+  }
+
+  get data() {
+    return {
+      COURSES: {
+        new: [
+          { id: 'p12', spec: '12개월 수강권', months: 12 },
+          { id: 'p6', spec: '6개월 수강권', months: 6 },
+        ],
+        renew: [
+          { id: 'r12', spec: '12개월 재연장', months: 12 },
+          { id: 'r6', spec: '6개월 재연장', months: 6 },
+        ],
+      },
+      BOOKS: [
+        { id: 'math', name: '수학', color: 'blue' },
+        { id: 'history', name: '한국사', color: 'yellow' },
+        { id: 'reading', name: '독서', color: 'green' },
+        { id: 'essay', name: '논술', color: 'purple' },
+        { id: 'comp', name: '독해', color: 'teal' },
+      ],
+      MONTHLY: 90000, BOOK: 10000, DISC: 0.15,
+    };
+  }
+
+  fmt(n) { return n.toLocaleString('ko-KR'); }
+  selectCourse(id) { this.setState({ course: id }); }
+  setTab(tab) { this.setState({ tab, course: this.data.COURSES[tab][0].id }); }
+  toggleBook(id) {
+    this.setState((s) => {
+      const nb = s.books.includes(id) ? s.books.filter((x) => x !== id) : [...s.books, id];
+      return { books: nb };
+    });
+  }
+
+  hexToRgb(hex) {
+    const h = hex.replace('#', '');
+    const v = h.length === 3 ? h.split('').map((c) => c + c).join('') : h;
+    const n = parseInt(v, 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+
+  buildTheme() {
+    const p = this.props || {};
+    const at = p.accentTheme ?? 'mint';
+    const heroStyle = p.heroStyle ?? 'gradient';
+    const titleColor = p.titleColor ?? 'white';
+    const titleOutline = p.titleOutline ?? false;
+    const headlineSize = p.headlineSize ?? 62;
+    const giftScale = p.giftScale ?? 0.82;
+    const benefitBand = p.benefitBand ?? 'yellow';
+    const ringColor = p.ringColor ?? 'gold';
+    const cornerRadius = p.cornerRadius ?? 22;
+    const buttonShape = p.buttonShape ?? 'pill';
+    const dividerStyle = p.dividerStyle ?? 'cloud';
+    const pageBgOpt = p.pageBg ?? 'tint';
+    const cloudOverlap = p.cloudOverlap ?? 255;
+    const giftFloat = p.giftFloat ?? true;
+    const ctaStyle = p.ctaStyle ?? 'gradient';
+    const finalPriceColor = p.finalPriceColor ?? 'accent';
+    const questionCard = p.questionCard ?? 'tint';
+    const benefitIcon = p.benefitIcon ?? 'ring';
+
+    const PAL = {
+      mint:  { accent: '#16BFB1', deep: '#00827C', soft: '#EAFAF8', heroA: '#56DBCC', heroB: '#34C6B7', tint: '#DBF5F2' },
+      teal:  { accent: '#00BAB1', deep: '#006D67', soft: '#E2F6F4', heroA: '#45CFC4', heroB: '#0E9E94', tint: '#D3F0EC' },
+      sky:   { accent: '#2BA8E0', deep: '#0B6FA8', soft: '#E6F4FC', heroA: '#5EC6F0', heroB: '#2B92D6', tint: '#DCEFFA' },
+      grape: { accent: '#8B5CC7', deep: '#5C3A93', soft: '#F0EAFA', heroA: '#B48AE0', heroB: '#8157C4', tint: '#ECE3FA' },
+      coral: { accent: '#FF7A59', deep: '#D6492B', soft: '#FFEDE6', heroA: '#FF9E80', heroB: '#FB6C49', tint: '#FFE6DD' },
+      lime:  { accent: '#46C66A', deep: '#1F8A47', soft: '#E8F8EC', heroA: '#74D98F', heroB: '#3FBE63', tint: '#DEF4E2' },
+    };
+    const pal = PAL[at] || PAL.mint;
+    const [dr, dg, db] = this.hexToRgb(pal.deep);
+    const deepRgb = dr + ',' + dg + ',' + db;
+
+    const heroBg = heroStyle === 'solid' ? pal.heroB
+      : heroStyle === 'radial' ? ('radial-gradient(circle at 50% 22%,' + pal.heroA + ',' + pal.heroB + ')')
+      : ('linear-gradient(180deg,' + pal.heroA + ' 0%,' + pal.heroB + ' 100%)');
+
+    const pageBg = pageBgOpt === 'cream' ? '#F4EFE6' : pageBgOpt === 'white' ? '#FFFFFF' : pal.tint;
+
+    const TITLE = {
+      white:  { m: '#ffffff', a: '#FFE066' },
+      yellow: { m: '#FFE066', a: '#ffffff' },
+      ivory:  { m: '#FFFDF5', a: '#FFC400' },
+    };
+    const tc = TITLE[titleColor] || TITLE.white;
+    const ctstroke = titleOutline ? ('5px ' + pal.deep) : '0';
+    const ctshadow = titleOutline ? ('0 5px 0 rgba(' + deepRgb + ',0.30)') : '0 3px 10px rgba(0,70,64,0.22)';
+
+    const btn = buttonShape === 'pill' ? '999px' : buttonShape === 'blocky' ? '10px' : '16px';
+
+    const BAND = {
+      yellow: { bg: 'linear-gradient(180deg,#FFDC3A,#FFD21F)', title: '#ffffff', tsh: '0 3px 0 rgba(210,150,0,0.55)', sub: '#8a6d00', label: '#2a2400', labelSub: '#7a6510' },
+      mint:   { bg: 'linear-gradient(180deg,' + pal.soft + ',' + pal.tint + ')', title: pal.deep, tsh: 'none', sub: 'rgba(' + deepRgb + ',0.7)', label: '#25282B', labelSub: '#5c6663' },
+      cream:  { bg: '#F6EEDD', title: '#B5740E', tsh: 'none', sub: '#9C7A2E', label: '#4a3b1a', labelSub: '#8a7550' },
+      white:  { bg: '#ffffff', title: pal.deep, tsh: 'none', sub: '#75787B', label: '#25282B', labelSub: '#6a716f' },
+    };
+    const band = BAND[benefitBand] || BAND.yellow;
+
+    const RING = { gold: '#F5B500', mint: pal.accent, coral: '#FF7A59', white: '#ffffff' };
+    const ring = RING[ringColor] || RING.gold;
+
+    const ctaBg = ctaStyle === 'solid' ? pal.deep
+      : ctaStyle === 'dark' ? 'linear-gradient(135deg,#243330,#141d1b)'
+      : ('linear-gradient(135deg,' + pal.accent + ' 0%,' + pal.deep + ' 100%)');
+    const priceColor = finalPriceColor === 'deep' ? pal.deep : finalPriceColor === 'coral' ? '#FF7A59' : pal.accent;
+    const QCARD = {
+      tint:    { bg: pal.soft, bd: 'rgba(' + deepRgb + ',0.14)' },
+      white:   { bg: '#ffffff', bd: '#EDF0F3' },
+      outline: { bg: 'transparent', bd: pal.accent },
+    };
+    const qc = QCARD[questionCard] || QCARD.tint;
+    const bIcon = benefitIcon === 'soft' ? 'none' : ('7px solid ' + ring);
+    const bIconBg = benefitIcon === 'soft' ? pal.soft : '#ffffff';
+    const lidAnim = giftFloat ? 'dkFloat 5.5s ease-in-out infinite' : 'none';
+
+    return {
+      accent: pal.accent, deep: pal.deep, soft: pal.soft, tint: pal.tint, deepRgb,
+      softBorder: 'rgba(' + deepRgb + ',0.14)',
+      accentGrad: 'linear-gradient(160deg,' + pal.accent + ',' + pal.deep + ')',
+      heroBg, pageBg,
+      rad: cornerRadius + 'px', btn,
+      chs: headlineSize + 'px',
+      ctmain: tc.m, ctaccent: tc.a, ctstroke, ctshadow,
+      giftW: Math.round(392 * giftScale) + 'px',
+      band: band.bg, bandTitle: band.title, bandTsh: band.tsh, bandSub: band.sub, label: band.label, labelSub: band.labelSub,
+      ring,
+      cloudMT: '-' + cloudOverlap + 'px',
+      ctaBg, priceColor, qCardBg: qc.bg, qCardBorder: qc.bd,
+      bIcon, bIconBg, lidAnim,
+      dividerCloud: dividerStyle === 'cloud',
+      dividerWave: dividerStyle === 'wave',
+    };
+  }
+
+  buildFrame(theme) {
+    const d = this.data, st = this.state;
+    const ACCENT = theme.accent, SOFT = theme.soft, drgb = theme.deepRgb;
+    const list = d.COURSES[st.tab];
+    const sel = list.find((c) => c.id === st.course) || list[0];
+    const selSh = '0 10px 22px -8px rgba(' + drgb + ',0.4), inset 0 0 0 2px ' + ACCENT;
+    const offSh = '0 6px 14px -8px rgba(20,60,56,0.2), inset 0 1px 0 rgba(255,255,255,0.8)';
+
+    const tabs = [
+      { value: 'new', label: '신규 수강권' },
+      { value: 'renew', label: '재연장' },
+    ].map((t) => {
+      const on = st.tab === t.value;
+      return {
+        key: t.value, label: t.label,
+        onSelect: () => this.setTab(t.value),
+        bg: on ? ACCENT : 'transparent',
+        fg: on ? '#fff' : '#5b6663',
+        sh: on ? ('inset 0 2px 1px rgba(255,255,255,0.4), inset 0 -3px 6px rgba(' + drgb + ',0.3)') : 'none',
+      };
+    });
+
+    const courseOptions = list.map((c) => {
+      const checked = c.id === sel.id;
+      return {
+        key: c.id, spec: c.spec,
+        detail: '월 ' + this.fmt(d.MONTHLY) + '원 × ' + c.months + '개월',
+        priceText: this.fmt(c.months * d.MONTHLY) + '원',
+        onSelect: () => this.selectCourse(c.id),
+        selBg: checked ? SOFT : '#fff',
+        dotBorder: checked ? ('7px solid ' + ACCENT) : '2px solid #C5C8CB',
+        sh: checked ? selSh : offSh,
+      };
+    });
+
+    const books = d.BOOKS.map((b) => {
+      const checked = st.books.includes(b.id);
+      return {
+        key: b.id, name: b.name,
+        priceText: this.fmt(d.BOOK) + '원',
+        onToggle: () => this.toggleBook(b.id),
+        selBg: checked ? SOFT : '#fff',
+        tagFg: 'var(--' + b.color + '-500)',
+        chkBg: checked ? ACCENT : '#EDF0F3',
+        chkSh: checked ? ('inset 0 2px 1px rgba(255,255,255,0.5), inset 0 -3px 5px rgba(' + drgb + ',0.35)') : 'inset 0 1px 2px rgba(20,60,56,0.18)',
+        chkOpacity: checked ? 1 : 0,
+        sh: checked ? selSh : offSh,
+      };
+    });
+
+    const bookTotal = st.books.length * d.BOOK;
+    const picked = sel.months * d.MONTHLY + bookTotal;
+    const discount = Math.round(picked * d.DISC);
+    return {
+      tabs, courseOptions, books,
+      pickedText: this.fmt(picked) + '원',
+      discountText: '-' + this.fmt(discount) + '원',
+      finalText: this.fmt(picked - discount) + '원',
+    };
+  }
+
+  renderVals() {
+    const p = this.props || {};
+    const theme = this.buildTheme();
+    return {
+      t: theme,
+      f: this.buildFrame(theme),
+      sparkles: (p.sparkles ?? true),
+      showConfetti: (p.showConfetti ?? true),
+      heroEyebrow: (p.heroEyebrow ?? true),
+      showBalloon: (p.showBalloon ?? true),
+      showPlane: (p.showPlane ?? true),
+      showCoin: (p.showCoin ?? false),
+      springCards: (p.springCards ?? true),
+      rings: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+      questions: (() => {
+        const on = (p.pulseSequence ?? true);
+        const texts = [
+          '정해진 패키지가 부담스러웠다면?',
+          '우리 아이에게 꼭 필요한 강좌와 교재만 사고 싶었다면?',
+          '합리적으로 단꿈e를 만나고 싶었다면?',
+        ];
+        return texts.map((t, i) => ({
+          text: t,
+          anim: on ? ('dkSeq 6.4s ease-in-out ' + (i * 1.6) + 's infinite') : 'none',
+        }));
+      })(),
+      conclusionAnim: (p.pulseSequence ?? true) ? 'dkSeqCta 6.4s ease-in-out 4.8s infinite' : 'none',
+    };
+  }
+}
+</script>
+</body>
+</html>
